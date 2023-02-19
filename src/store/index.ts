@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import converterReducer from './converter/converterSlice';
 
 export const store = configureStore({
-    reducer: {},
+    reducer: {
+        converter: converterReducer,
+    },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
