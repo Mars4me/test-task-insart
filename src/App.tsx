@@ -1,13 +1,20 @@
 import React from 'react';
-import ControlledInput from './components/ControlledInput';
-import CurrencyConverter from './components/CurrencyConverter';
+import { ControlledInput } from './components/ControlledInput';
+import { Body } from './layouts/body';
+import { Footer } from './layouts/footer';
+import { Header } from './layouts/header';
 
 function App() {
     return (
-        <div className="container">
-            <h1 className="text-3xl font-bold underline text-center">Currency Converter</h1>
-            <ControlledInput initialValue="sfsafas" />
-            <CurrencyConverter />
+        <div className="flex flex-col w-full min-h-[100vh] overflow-hidden">
+            <Header />
+            <Body>
+                <ControlledInput initialValue="Text test1" size="xl" className="w-[200px]" />
+
+                {/* <CurrencyConverter />
+            <RegistrationForm /> */}
+            </Body>
+            <Footer />
         </div>
     );
 }

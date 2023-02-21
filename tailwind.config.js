@@ -2,7 +2,16 @@
 module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                serif: ['Josefin+Slab', 'serif'],
+            },
+            screens: {
+                mobile: {
+                    max: '768px',
+                },
+            },
+        },
     },
     plugins: [],
 };
