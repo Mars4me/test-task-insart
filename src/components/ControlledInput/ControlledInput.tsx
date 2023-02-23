@@ -52,7 +52,7 @@ export const ControlledInput: React.FC<ControlledInputProps> = ({
         handleEditClick,
         inputListeners,
         wrapperListeners,
-    } = useControlledInput(initialValue || 0, numbersAfterDot || 2);
+    } = useControlledInput(initialValue || 0);
 
     return (
         <div

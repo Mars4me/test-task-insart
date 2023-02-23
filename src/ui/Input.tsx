@@ -6,16 +6,16 @@ interface InputProps {
     defaultValue?: number;
 }
 
-export const Input: FC<Readonly<InputProps>> = ({ value, onChange, defaultValue }) => {
+export const Input: FC<Readonly<InputProps>> = ({ onChange, value, defaultValue }) => {
     return (
         <input
             type="number"
             min={0}
-            defaultValue={defaultValue}
             step={0.01}
+            defaultValue={defaultValue}
             value={value}
             onChange={onChange}
-            className="text-2xl focus:outline-none"
+            className="text-2xl focus:outline-none w-[100%]"
         />
     );
 };

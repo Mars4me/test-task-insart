@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { CURRENCIES, Currency } from '../mockData';
 import { AiOutlineSwap } from 'react-icons/ai';
 import { Select } from '../ui/Select';
@@ -70,7 +70,7 @@ const CurrencyConverter: React.FC = () => {
                 <label className="font-thin" htmlFor="from-currency">
                     Change
                 </label>
-                <div>
+                <div className="flex">
                     <Input value={amountFrom} onChange={handleAmountChange} />
 
                     <Select
@@ -91,15 +91,7 @@ const CurrencyConverter: React.FC = () => {
                 </label>
                 <div className="flex">
                     <Input value={convertedAmount} onChange={handleToAmountChange} />
-                    {/* <input
-                        type="number"
-                        className="text-2xl flex-grow-[2]"
-                        defaultValue={3.63}
-                        min={0}
-                        step={0.01}
-                        value={convertedAmount.toFixed(2)}
-                        onChange={(e) => setAmountFrom(parseFloat(e.target.value))}
-                    /> */}
+
                     <Select
                         selectElemProps={{ value: toCurrency.name, onChange: handleToCurrencyChange }}
                         options={CURRENCIES}

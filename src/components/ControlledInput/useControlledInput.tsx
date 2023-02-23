@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { validation } from '../../utils';
-import { toFixed } from '../../utils';
 
 interface useControlledInputReturn {
     value: number;
@@ -22,17 +21,12 @@ interface useControlledInputReturn {
     handleSaveClick: () => void;
 }
 
-export const useControlledInput = (
-    defaultValue: number,
-    numbersAfterDot: number
-): useControlledInputReturn => {
+export const useControlledInput = (defaultValue: number): useControlledInputReturn => {
     const [value, setValue] = useState<number>(defaultValue);
     const [isEditing, setIsEditing] = useState(false);
     const [isHover, setIsHover] = useState(false);
     const [isValid, setIsValid] = useState<boolean>(true);
     const inputRef = useRef<HTMLInputElement>(null);
-
-    const numberToFixed = useCallback((value: number) => toFixed(numbersAfterDot)(value), [numbersAfterDot]);
 
     const handleEditClick = () => {
         setIsValid(true);
@@ -40,7 +34,7 @@ export const useControlledInput = (
     };
 
     const handleSaveClick = () => {
-        setValue(numberToFixed(inputRef.current?.valueAsNumber || value));
+        setValue(inputRef.current?.valueAsNumber || value);
         setIsEditing(false);
         setIsHover(false);
     };
@@ -82,12 +76,12 @@ export const useControlledInput = (
 
     useEffect(() => {
         if (inputRef.current) {
-            inputRef.current.valueAsNumber = numberToFixed(value);
+            inputRef.current.valueAsNumber = value;
             if (isEditing) {
                 inputRef.current.focus();
             }
         }
-    }, [isEditing, value, numberToFixed]);
+    }, [isEditing, value]);
 
     return {
         value,
