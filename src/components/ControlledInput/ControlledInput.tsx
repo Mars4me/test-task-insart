@@ -3,7 +3,7 @@ import { AiOutlineCheck } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 import { mergeClassName } from '../../utils';
 import { CustomCopmonentProps } from '../../interfaces';
-import { useControlledInput } from './useControlledInput';
+import { useControlledInput } from './hooks/useControlledInput';
 
 interface ControlledInputProps extends CustomCopmonentProps {
     initialValue?: number;
