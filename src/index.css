@@ -6,6 +6,13 @@
 
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --color-primary: theme('colors.primary');
+        --color-secondary: theme('colors.secondary');
+    }
+}
+
 *,
 *::after,
 *::before {
