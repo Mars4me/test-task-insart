@@ -22,7 +22,6 @@
 }
 
 body {
-    background-color: #f7f7f7;
     font-family: theme('fontFamily.sans');
     font-weight: 500;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { toFixed } from './../../utils/numbers';
-import { validation } from './../../utils/validation';
+import { validation } from '../../utils';
+import { toFixed } from '../../utils';
 
 interface useControlledInputReturn {
     value: number;

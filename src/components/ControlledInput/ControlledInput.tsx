@@ -63,11 +63,18 @@ export const ControlledInput: React.FC<ControlledInputProps> = ({
         >
             {isEditing ? (
                 <div className="relative flex w-full p-5">
+                    {!isValid && (
+                        <span className="absolute top-0 text-xs text-red-300">
+                            Allowed value is 10% more\less
+                        </span>
+                    )}
+
                     <input
-                        className="w-[calc(100%_-_5px)] px-2 focus:rounded-sm focus:outline-[#1E90FF] text-center"
+                        className={`w-[calc(100%_-_5px)] px-2 focus:rounded-sm ${
+                            isValid ? 'focus:outline-[#1E90FF]' : 'focus:outline-[#ce4949]'
+                        } text-center`}
                         ref={inputRef}
                         type="number"
-                        max={1000_000}
                         step={0.01}
                         min={0}
                         {...inputListeners}
