@@ -12,9 +12,6 @@ function App() {
     const fetchCurrencyData = async () => {
         try {
             const { data } = await axios.get('/p24api/pubinfo');
-
-            console.log(data);
-
             setCurrencyData(data);
         } catch (error) {
             console.error(error);
@@ -30,10 +27,7 @@ function App() {
             <Header />
             <Body>
                 <Table />
-                {/* <CurrencyConverter />
-            <RegistrationForm /> */}
-
-                <CurrencyConverter></CurrencyConverter>
+                <CurrencyConverter />
             </Body>
             <Footer />
         </div>
